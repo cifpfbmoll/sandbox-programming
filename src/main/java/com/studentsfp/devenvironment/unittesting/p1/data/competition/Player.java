@@ -1,6 +1,5 @@
 package com.studentsfp.devenvironment.unittesting.p1.data.competition;
 
-import com.fbmoll.programming.data.Person;
 import com.studentsfp.devenvironment.unittesting.p1.data.Person;
 
 /**
