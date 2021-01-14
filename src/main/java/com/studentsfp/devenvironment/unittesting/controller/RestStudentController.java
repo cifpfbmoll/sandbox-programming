@@ -1,6 +1,8 @@
 package com.studentsfp.devenvironment.unittesting.controller;
 
 import com.studentsfp.devenvironment.unittesting.data.Student;
+import com.studentsfp.devenvironment.unittesting.p1.data.competition.CompetitionHelper;
+import com.studentsfp.devenvironment.unittesting.p1.data.competition.Team;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,4 +26,14 @@ public class RestStudentController {
     public Student getStudent(@RequestParam(value = "name", defaultValue = "Quijote") String name) {
         return new Student(counter.incrementAndGet(), String.format(template, name));
     }
+
+    @GetMapping("/getTeam")
+    public Team getTeam(@RequestParam(value = "name", defaultValue = "Quijote") String name,
+                        @RequestParam(value = "q", defaultValue = "12") Integer numPlayers) {
+        Team team = new Team();
+        team.setName(name);
+        team.setPlayerList(CompetitionHelper.getRandomPlayers(numPlayers,name,""));
+        return team;
+    }
+
 }

@@ -8,4 +8,13 @@ package com.studentsfp.devenvironment.unittesting.p2.data;
  * @author berto (alberto.soto@gmail.com)
  */
 public class Bank {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        //this.name = name;
+    }
 }
