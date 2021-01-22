@@ -5,7 +5,14 @@ import java.util.Date;
 import java.util.List;
 
 public class BankOperationsHelper {
-
+    /**
+     * Creates a blank Account for the minitask setting initial amount of cash
+     *
+     * @param bankName the bank name!
+     * @param amount initial balance
+     * @param customers array of customer names
+     * @return new Account
+     */
     public static Account initAccount(String bankName, Double amount, String... customers) {
         Account account = new Account();
         Bank bank = new Bank();

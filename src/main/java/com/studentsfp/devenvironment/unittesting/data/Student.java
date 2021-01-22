@@ -1,5 +1,7 @@
 package com.studentsfp.devenvironment.unittesting.data;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * com.studentsfp.devenvironment.unittesting.data
  * Class Student
@@ -8,11 +10,12 @@ package com.studentsfp.devenvironment.unittesting.data;
  * @author berto (alberto.soto@gmail.com)
  */
 public class Student {
-    private long id;
+    private Long id;
     private String name;
     private double mark;
 
     public Student() {
+        super();
     }
 
     public Student(long id, String name) {
@@ -43,4 +46,15 @@ public class Student {
     public void setMark(double mark) {
         this.mark = mark;
     }
+
+    @Override
+    public String toString() {
+        //return super.toString();
+        boolean hasPassed = this.mark >= 5;
+        return String.format("Alumno: %s - nota: %s %s"
+                , StringUtils.capitalize(this.name)
+                , this.mark
+                , hasPassed ? "APTO" :StringUtils.EMPTY);
+    }
+
 }

@@ -41,6 +41,7 @@ public class RestStudentController {
         return team;
     }
 
+
     @GetMapping("/openAccount")
     public Account getTeam(@RequestParam(value = "names", defaultValue = "Pepito,Juanito") String names,
                            @RequestParam(value = "bank", defaultValue = "ING") String bank,

@@ -1,5 +1,7 @@
 package com.studentsfp.devenvironment.unittesting.p2.data;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * com.studentsfp.devenvironment.unittesting.p2.data
  * Class CardType
@@ -8,5 +10,11 @@ package com.studentsfp.devenvironment.unittesting.p2.data;
  * @author berto (alberto.soto@gmail.com)
  */
 public enum CardType {
-    DEBIT, CREDIT
+    DEBIT, CREDIT;
+
+    @Override
+    public String toString() {
+        return StringUtils.toRootLowerCase(super.toString());
+        //return super.toString();
+    }
 }
