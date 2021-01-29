@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+<h1>Hola mundo</h1>
+<form action="/addPublication" method="post">
+    <div>
+        <label for="foTitle">Title</label>
+        <input id="foTitle" type="text" name="publication.title">
+    </div>
+    <div>
+        <label for="foIsbn">Isbn</label>
+        <input id="foIsbn" type="text" name="publication.isbn">
+    </div>
+    <div>
+        <label for="foYear">Year</label>
+        <input id="foYear" type="text" name="publication.year">
+    </div>
+    <input type="submit" value="Enviar">
+</form>
+<div id="library">
+
+</div>
+<script>
+    fetch("/getBooks")
+        .then(response => response.json())
+        .then(data => {
+            console.log("fetchfinishx2");
+            console.log(data);
+            let content = "";
+            data.forEach(item => {
+                content += `
+                    <p>${item.isbn} - ${item.title} - ${item.year}</p>
+                `;
+            });
+            document.getElementById('library').innerHTML = content;
+        });
+</script>
+</body>
+</html>

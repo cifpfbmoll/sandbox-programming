@@ -17,4 +17,9 @@ public class Human extends LivingBeing {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
+    @Override
+    public boolean isHappy() {
+        return true;
+    }
 }

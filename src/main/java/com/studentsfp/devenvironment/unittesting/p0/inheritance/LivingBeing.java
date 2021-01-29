@@ -14,6 +14,8 @@ public abstract class LivingBeing {
     private Integer age;
     private Date bornDate;
 
+    public abstract boolean isHappy();
+
     public String getSoulKind() {
         return soulKind;
     }

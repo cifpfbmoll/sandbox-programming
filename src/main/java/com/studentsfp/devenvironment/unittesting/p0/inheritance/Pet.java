@@ -7,6 +7,17 @@ package com.studentsfp.devenvironment.unittesting.p0.inheritance;
  *
  * @author berto (alberto.soto@gmail.com)
  */
-public class Pet extends LivingBeing{
+public class Pet extends LivingBeing implements Happiness{
     private Gender gender;
+
+    @Override
+    public boolean isHappy() {
+        //return false;
+        return createHappiness();
+    }
+
+    @Override
+    public boolean createHappiness() {
+        return true;
+    }
 }
