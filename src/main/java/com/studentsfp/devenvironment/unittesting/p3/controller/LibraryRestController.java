@@ -2,14 +2,20 @@ package com.studentsfp.devenvironment.unittesting.p3.controller;
 
 import com.studentsfp.devenvironment.unittesting.p3.service.LibraryService;
 import com.studentsfp.devenvironment.unittesting.p3.data.Publication;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/rest/api/v1")
 public class LibraryRestController {
 
-    LibraryService libraryService = new LibraryService();
+    LibraryService libraryService;
+
+    public LibraryRestController(LibraryService libraryService) {
+        this.libraryService = libraryService;
+    }
 
     @GetMapping("/getBooks")
     public List<Publication> getPublications() {

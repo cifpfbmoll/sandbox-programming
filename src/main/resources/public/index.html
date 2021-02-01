@@ -10,21 +10,22 @@
 <form action="/addPublication" method="post">
     <div>
         <label for="foTitle">Title</label>
-        <input id="foTitle" type="text" name="publication.title">
+        <input id="foTitle" type="text" name="title">
     </div>
     <div>
         <label for="foIsbn">Isbn</label>
-        <input id="foIsbn" type="text" name="publication.isbn">
+        <input id="foIsbn" type="text" name="isbn">
     </div>
     <div>
         <label for="foYear">Year</label>
-        <input id="foYear" type="text" name="publication.year">
+        <input id="foYear" type="text" name="year">
     </div>
     <input type="submit" value="Enviar">
 </form>
 <div id="library">
 
 </div>
+<script src="js/studentUtils.js"></script>
 <script>
     fetch("/getBooks")
         .then(response => response.json())
