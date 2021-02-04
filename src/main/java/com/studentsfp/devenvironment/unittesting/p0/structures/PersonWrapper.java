@@ -19,4 +19,9 @@ public class PersonWrapper {
         personMap.put(123,new Person());
 
     }
+
+    public static boolean testPersons(){
+       // this.personList.add("asd");
+        return false;
+    }
 }

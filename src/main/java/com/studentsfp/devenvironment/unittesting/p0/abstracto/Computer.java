@@ -22,4 +22,9 @@ public class Computer extends Article {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+
+    @Override
+    public Double getDiscountPercentage() {
+        return 1.;
+    }
 }

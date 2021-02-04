@@ -5,7 +5,6 @@ public class Publication {
     private String title;
     private Integer year;
 
-
     public Publication(){
 
     }
